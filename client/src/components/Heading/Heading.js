@@ -1,9 +1,13 @@
 import React from 'react';
-import Styles from './Heading.module.css';
+import './Heading.css';
 
-export default props => {
-    const { mode='default' } = props;
+const header = () => {
+    
     return (
-        <h1 className={Styles[mode]}>Breweries</h1>
+        <div>
+            <h1 className='heading'>Breweries</h1>
+        </div>
     )
 };
+
+export default header;

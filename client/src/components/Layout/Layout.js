@@ -3,21 +3,27 @@ import Auxiliary from '../../hoc/Auxiliary';
 import Navbar from '../Navbar/Navbar';
 import Logo from '../Logo/Logo';
 import Heading from '../Heading/Heading';
+import './Layout.css';
 
-const layout = (props) => (
+const layout = () => (
     <Auxiliary>
-        <div >
-            <Logo></Logo>
-            <div>
-                <Heading></Heading>
+        <div className='row'>
+            <div className='col-6'>
+                <Logo></Logo>
             </div>
-            <div>
+            <div className='col-6'>
                 <Navbar></Navbar>
             </div>
+            <div className='col-3'>
+
+            </div>
         </div>
-        <main>
             
-        </main>
+        <div className='row'>
+            <div className='col-12'>
+                <Heading></Heading>
+            </div>
+        </div>
     </Auxiliary>
 );
 

@@ -1,15 +1,18 @@
 import React from 'react';
-import Styles from './Navbar.module.css';
+import './Navbar.css';
 
-export default props => {
-    const { mode='default' } = props;
+const navbar = () => {
+    
     return (
-        <ul className={Styles[mode]}>
-            <li className='links'>LINKS</li>
-            <li>Home</li>
-            <li>Find Brewery</li>
-            <li>About This Project</li>
-            <li>Contact MongoByte</li>
-        </ul>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Find Brewery</li>
+                <li>About This Project</li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
     )
 };
+
+export default navbar;

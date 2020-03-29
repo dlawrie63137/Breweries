@@ -1,11 +1,13 @@
 import React from 'react';
-import Styles from './Logo.module.css';
+import './Logo.css';
 import Logo from '../../assets/img/logo.png';
 
-export default props => {
-    const { mode='default' } = props;
+const logo = () => {
+    
     return (
-        <img src={Logo} alt='logo' className={Styles[mode]}></img>
+        <img src={Logo} alt='logo' className='logo_img'></img>
     )
 };
+
+export default logo;
 

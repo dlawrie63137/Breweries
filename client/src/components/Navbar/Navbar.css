@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+  }
+
+  .col-6_nav {
+      width: 50%;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+nav li {
+    font-size: x-small;
+    padding: 3px;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+}
