@@ -7,8 +7,9 @@
     clear: both;
     display: table;
   }
-  
-  .heading {
+
+  .caption {
+      color: grey;
+      width: 100%;
       text-align: center;
   }
-  

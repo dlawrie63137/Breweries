@@ -8,7 +8,7 @@ const navbar = () => {
             <ul>
                 <li>Home</li>
                 <li>Find Brewery</li>
-                <li>About This Project</li>
+                <li>About MongoByte</li>
                 <li>Contact Us</li>
             </ul>
         </nav>
