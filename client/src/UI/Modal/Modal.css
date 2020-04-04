@@ -1,0 +1,269 @@
+/* Extra small devices (phones, 600px and down) */
+
+ @media only screen and (max-width: 600px) {
+
+   * {
+       box-sizing: border-box;
+   }
+  
+   button {
+       border-color: dodgerblue;
+       border-style: groove;
+       margin-left: 25%;
+   }
+
+   .contents {
+       margin-top: 5%;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       width: 1600px;
+       max-width: 90%;
+       height: 200px;
+       max-height: 90%;
+       z-index: 3;
+    }
+ 
+    .errorMessage {
+       color: red;
+       font: Arial;
+       font-size: 10pt;
+       margin-left: 20%;
+       margin-top: 6%;
+    }
+
+    .modalMsg {
+       font: Arial;
+       text-align: center;
+    }
+
+    .replyBtn {
+       align-items: center;
+       margin-top: 15%;
+    }
+
+    .row::after {
+       content: "";
+       clear: both;
+       display: table;
+    }
+
+    .showModal {
+        background-color: azure;
+        border-color: dodgerblue;
+        border-style: ridge;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        max-width: 90%;
+        height: 200px;
+        max-height: 90%;
+        z-index: 2;
+     }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    * {
+        box-sizing: border-box;
+    }
+   
+    button {
+        border-color: dodgerblue;
+        border-style: groove;
+        margin-left: 25%;
+    }
+ 
+    .contents {
+        margin-top: 5%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        max-width: 90%;
+        height: 200px;
+        max-height: 90%;
+        z-index: 3;
+     }
+  
+     .errorMessage {
+        color: red;
+        font: Arial;
+        font-size: 10pt;
+        margin-left: 35%;
+        margin-top: 3%;
+     }
+ 
+     .modalMsg {
+        font: Arial;
+        text-align: center;
+     }
+ 
+     .replyBtn {
+        align-items: center;
+        margin-left: 10%;
+        margin-top: 10%;
+     }
+ 
+     .row::after {
+        content: "";
+        clear: both;
+        display: table;
+     }
+ 
+     .showModal {
+         background-color: azure;
+         border-color: dodgerblue;
+         border-style: ridge;
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: 1600px;
+         max-width: 90%;
+         height: 200px;
+         max-height: 90%;
+         z-index: 2;
+      }
+ }
+
+/* For Landscape Tablets (Medium Devices) */
+
+@media only screen and (min-width: 768px and max-width: 1023px) {
+    button {
+        border-color: dodgerblue;
+        border-style: groove;
+        margin-left: 30%;
+    }
+
+    .errorMessage {
+        margin-bottom: 5%;
+        margin-left: 33%;
+        margin-top: 5%;
+        color: red;
+    }
+
+    .modalMsg {
+        margin-left: 0%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+    }
+
+    .showModal {
+        align-items: center;
+        background-color: azure;
+        border-color: dodgerblue;
+        border-style: ridge;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1600px;
+        max-width: 75%;
+        height: 300px;
+        max-height: 75%;
+        z-index: 2;
+     }
+
+     .replyBtn {
+         margin-left: -5%;
+         margin-top: 10%;
+         padding-bottom: 15%;;
+     }
+}
+
+/* For Desktop (Large Devices) */
+ @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .contents {
+        margin-top: 3%;
+    }
+    
+    .errorMessage {
+        font-size: 20pt;
+        margin-left: 25%;
+    }
+    
+    .modalMsg {
+        font-size: xx-large;
+        margin-top: 5%;
+    }
+    .replyBtn {
+        margin-bottom: 25%;
+        margin-left: -8%;
+    }
+        
+    .showModal {
+        height: 350px;
+        position: fixed;
+        left: 50%;
+    }
+ }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .errorMessage {
+         margin-left: 30%;
+         margin-top: 5%;
+     }
+
+    .modalMsg {
+        font: Arial;
+        font-size: 16pt;
+        text-justify: newspaper;
+        margin-bottom: 0%;
+        margin-left: 5%;
+        margin-top: 8%;
+    }
+    
+    p {
+        color: red;
+        font: Arial;
+        margin-left: 3%;
+        margin-top: 6%;
+    }
+
+    .replyBtn {
+        margin-bottom: 5%;
+        margin-left: 20%;
+    }
+
+    .no {
+        border-color: dodgerblue;
+        border-style: groove;
+        margin-left: 10%;
+        margin-right: 20%;
+        margin-bottom: 10%;
+    }
+    
+    .yes {
+        border-color: dodgerblue;
+        border-style: groove;
+        margin-left: 20%;
+        margin-right: 8%;
+        padding-top: 0%;
+    }
+    
+    .showModal {
+        animation-name: fadeModal;
+        animation-duration: 1s;
+        background-color: azure;
+        border-color: dodgerblue;
+        border-style: ridge;
+        height: auto;
+        max-width: 450px;
+        position: fixed;
+        z-index: 2;
+        bottom: 20%;
+        left: 50%;
+     }
+     @keyframes fadeModal {
+        from {opacity: 1%}
+        to {opacity: 100%}
+     }
+ }
+
+ 

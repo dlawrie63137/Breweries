@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Layout from './components/Layout/Layout';
-import Logo from './components/Logo/Logo';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Landing from './containers/Layout/Layout';
+//import Contact from './containers/Contact/Contact';
+
 
 class App extends Component {
   state = {
@@ -41,10 +43,12 @@ class App extends Component {
 render() {
     return (
       <div className='default'>  
-        <Layout>
-          <Logo mode='default'></Logo>
-          <p>testing</p>
-        </Layout>
+      <BrowserRouter>
+        <Switch>
+            <Route exact path="/" component={Landing} />
+          {/*  <Route path="/contact" component={Contact} /> */}
+        </Switch>
+    </BrowserRouter>
       </div>
     );
   }

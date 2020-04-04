@@ -21,10 +21,19 @@
 
 .col-12 {
     align-self: center;
+    margin-bottom: 0;
     width: 100%;
 }
 
 .foot {
-    margin-top: 50px;
+    margin-top: 60px;
+}
+
+.logo {
+    border-style: ridge;
+    border-bottom: black;
+    border-top: black;
+    border-left: none;
+    border-right: none;
 }
 

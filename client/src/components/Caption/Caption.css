@@ -8,8 +8,9 @@
     display: table;
   }
 
-  .caption {
+  h6 {
       color: grey;
+      margin-bottom: 0;
       width: 100%;
       text-align: center;
   }
