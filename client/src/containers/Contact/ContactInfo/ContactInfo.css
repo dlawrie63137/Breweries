@@ -1,0 +1,41 @@
+/* For Cell */
+* {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .col-6 .mail {
+      margin-bottom: 200px;
+      float: left;
+      width: 100%;
+  }
+
+  .col-6 .email {
+    width: 100%
+  }
+
+  .col-12 .form {
+      margin-left: 10px;
+      width: 100%;
+  }
+
+  h5 {
+    margin: 10px;
+  }
+
+  p {
+      font-size: 12px;
+      margin-top: 0px;
+      padding: 0px;
+  }
+
+  /* For Laptop */
+
+
+
+  

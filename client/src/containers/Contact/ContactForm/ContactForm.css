@@ -1,0 +1,39 @@
+/* For Cell */
+* {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.btn {
+    margin-bottom: 1%;
+    margin-left: 35%;
+    margin-top: 1%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.form-control {
+    width: 50%;
+}
+
+.form-group {
+    margin-left: 25%;
+    padding: 5px;
+    width: 100%;
+}
+
+p {
+    padding: 15px;
+}
+
+/* For Laptop */
+
+
+
