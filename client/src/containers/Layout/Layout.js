@@ -39,11 +39,11 @@ class Layout extends Component {
         return (
             <Auxiliary>
                 <div className='row logo'>
-                    <div className='col-6'>
+                    <div className='col-3'>
                         <Logo></Logo>
                     </div>
 
-                    <div className='col-6'>
+                    <div className='col-9'>
                          <Navbar showModal={this.state.modalVisible}></Navbar>
                     </div>
                 </div>
