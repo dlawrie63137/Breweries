@@ -1,4 +1,4 @@
 module.exports = {
-    USER: 'MongoByteTesting@outlook.com', 
-    PASS: '123testing'
+    USER: 'admin@mongobyte.com', 
+    PASS: '9NMr(`A:vfQKg88j'
 }
