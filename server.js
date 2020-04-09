@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const creds = require('./config');
 
+
 const transport = {
   host: 'smtp.zoho.com', // Don’t forget to replace with the SMTP host of your provider
   port: 587,
@@ -24,14 +25,13 @@ transporter.verify((error, success) => {
 });
 
 router.post('/send', (req, res, next) => {
-  console.log(req.body.data)
   const name = req.body.name
   const email = req.body.email
   const message = req.body.message
   const content = `name: ${name} \n email: ${email} \n message: ${message} `
 
   const mail = {
-    from: name,
+    from: 'admin@mongobyte.com',
     to: 'admin@mongobyte.com',  // Change to email address that you want to receive messages on
     subject: 'New Message from Contact Form',
     text: content
@@ -39,6 +39,7 @@ router.post('/send', (req, res, next) => {
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
+      console.log(err)
       res.json({
         status: 'fail'
       }) 
@@ -56,7 +57,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/', router)
-app.listen(3003)
+app.listen(3002)
 app.use(bodyParser.urlencoded({extended: true}))
 
 

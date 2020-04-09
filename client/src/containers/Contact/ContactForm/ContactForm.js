@@ -3,7 +3,7 @@ import axios from 'axios';
 import './ContactForm.css';
 
 class contactForm extends Component  {
-
+  
     constructor(props) {
         super(props);
         this.state = {
@@ -13,8 +13,9 @@ class contactForm extends Component  {
             buttonText: 'Send Message'
         }
       }
-
-    render() {
+    
+    render() { 
+      
      return(
         <div className="container-contact">
            <div className='row'>
@@ -61,19 +62,20 @@ class contactForm extends Component  {
         e.preventDefault();
         this.setState({buttonText: '... Sending'})
         
-    axios({
-      method: "POST", 
-      url:"http://localhost:3003/send", 
-      data:  this.state
-    }).then((response)=>{
-      if (response.data.status === 'success'){
-        alert("Message Sent."); 
-        this.resetForm()
-      }else if(response.data.status === 'fail'){
-        alert("Message failed to send.")
-      }
-    })
-  }
+          axios({
+            method: 'POST', 
+            url:"http://localhost:3002/send", 
+            data:  this.state
+          }).then((response)=>{
+            console.log(response)
+            if (response.data.status === 'success'){
+              alert("Message Sent."); 
+              this.resetForm()
+            }else if(response.data.status === 'fail'){
+              alert(" Message failed to send.")
+            }
+          })
+        }
 
         
   resetForm(){
