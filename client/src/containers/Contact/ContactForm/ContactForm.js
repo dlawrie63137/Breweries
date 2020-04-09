@@ -20,7 +20,7 @@ class contactForm extends Component  {
         <div className="container-contact">
            <div className='row'>
              <div className='col-12 contactForm'>
-                 <p>Or just fill out the form below:</p>               
+                 <p className='label'>Or just fill out the form below:</p>               
                     <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                        <div className="form-group">
                            <input type="text" className="form-control" placeholder='Name' value={this.state.name} onChange={this.onNameChange.bind(this)} />

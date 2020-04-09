@@ -35,6 +35,26 @@
   }
 
   /* For Laptop */
+  @media only screen and (min-width: 1024px) {
+    .col-6 {
+      padding-left: 10%;
+    } 
+
+    .email {
+      font-size: 12pt;
+      padding-right: 0%;
+      width: 50%;
+    }
+
+    .emailAddress {
+      font-size: 12pt;
+    }
+
+    .mail {
+      padding-left: 0%;
+      width: 50%;
+    }
+  }
 
 
 

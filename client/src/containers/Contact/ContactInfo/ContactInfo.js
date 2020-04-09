@@ -9,7 +9,7 @@ const contactInfo = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col-6 email'>
-                    <h5><u>Email:</u></h5><Link to='mailto:admin@mongobyte.com'><p>admin@mongobyte.com</p></Link>
+                    <h5><u>Email:</u></h5><Link to='mailto:admin@mongobyte.com'><p className='emailAddress'>admin@mongobyte.com</p></Link>
                 </div>
 
                 <div className='col-6 mail'>
