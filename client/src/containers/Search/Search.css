@@ -1,0 +1,54 @@
+/* For Cell */
+* {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .col-3 {
+    margin-left: 0%;;
+    width: 25%;
+  }
+
+  .col-4 {
+    width: 33.33%;
+  }
+
+  .col-9 {
+    width: 70%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+
+  /* Extra small devices (phones 600px and under) */
+  @media only screen and (max-width: 600px) {
+
+  }
+
+  /* Small devices (phones over 600px) */
+  @media only screen and (min-width: 601px) {
+
+  }
+
+  /* Medium devices (landscape tablets 768px and up) */
+  @media only screen and (min-width: 768px) {
+        
+    }
+
+    
+
+  /* Large devices (laptops/desktops 992px and up) */
+  @media only screen and (min-width: 992px) {
+
+  }
+
+  /* Extra large devices (laptops/desktops 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+
+  }

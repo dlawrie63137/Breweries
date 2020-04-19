@@ -1,0 +1,43 @@
+/* For Cell */
+* {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .col-12 {
+      text-align: center;
+      width: 100%;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .col-12 {
+        display: block;
+        padding: 0 0 5px 5px;
+        clear: both;
+      }
+
+      .btn {
+        margin-left: 1%;
+      }
+
+      input {
+        float: left;
+        width: 20px;
+        margin-left: 35%;
+        margin-right: -25%;
+        margin-top: 1%; 
+        
+        -webkit-appearance: radio;
+      }
+
+      .search {
+        margin-left: 31%;
+        margin-top: 5%;
+        width: 40%;
+      }
+  }
