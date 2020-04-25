@@ -22,16 +22,16 @@ class Layout extends Component {
     }
     
     componentDidMount() {
-            console.log('where is my modal?')
+            // console.log('where is my modal?') Used for Testing
     };
 
     yesClickHandler = (e) => {
-        console.log('inside yesClickHandler')
+        // console.log('inside yesClickHandler') Used for Testing
         this.setState({modalVisible: false})
     }
     
     noClickHandler = (e) => {
-        console.log('inside noClickHandler')
+        // console.log('inside noClickHandler') Used for Testing
         this.setState({modalErrorFlag: true})
     }
 
@@ -54,7 +54,7 @@ class Layout extends Component {
                     </div>
                 </div>
 
-                <div className='row'>
+                <div className='row image'>
                     <div className='col-12'>
                         <Image></Image>
                     </div>

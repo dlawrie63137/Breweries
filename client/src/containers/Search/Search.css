@@ -28,7 +28,9 @@
 
   /* Extra small devices (phones 600px and under) */
   @media only screen and (max-width: 600px) {
-
+  .foot {
+    margin-left: 3%;
+  }
   }
 
   /* Small devices (phones over 600px) */
