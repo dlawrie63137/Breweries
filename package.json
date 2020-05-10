@@ -20,6 +20,7 @@
     "logrocket": "^1.0.7",
     "nodemailer": "^6.4.6",
     "nodemon": "^2.0.2",
+    "ol": "^6.3.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "react-string-replace": "^0.4.4"

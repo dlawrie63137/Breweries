@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .map {
+    height: 400px;
+    width: 95%;
+    margin-left: 2%;
+    margin-top: 2%;
+  }
