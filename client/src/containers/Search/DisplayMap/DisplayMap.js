@@ -21,7 +21,8 @@ class DisplayMap extends Component {
         this.map = new Map({
             view: new View({
                 center: fromLonLat([-95.7129, 37.0902]),
-                zoom: 3
+                zoom: 3,
+                maxZoom:15
             }),
             layers: [
                 new Tile({
