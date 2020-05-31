@@ -9,7 +9,7 @@ class SearchForm extends Component {
         super(props);
         this.state = {
             search_mode: 'name', // search by
-            search_term: ' ', // search for
+            search_term: '', // search for
             queryResponse: [], // axios response
             buttonText: 'Search'
         }
@@ -18,7 +18,7 @@ class SearchForm extends Component {
         
 
     render() {
-        if(this.state.queryResponse.length>0) {
+        if(this.state.queryResponse.length>0) {   //if search returns populated list show map
         
         return(
             <Auxiliary>
@@ -116,7 +116,7 @@ class SearchForm extends Component {
             </Auxiliary>
 
         );
-    }else {
+    }else { // if search results empty or on initial load hide map
         return(
             <Auxiliary>
                 <div className='row'>
@@ -188,7 +188,7 @@ class SearchForm extends Component {
 
                             <div className='row'>
                                 <div className='col-12'>
-                                    <input type='text' className='search' value={this.state.search_term} placeholder='Search Term' onChange={this.onTextChange.bind(this)}></input>
+                                    <input type='search' className='search' autoFocus={true} value={this.state.search_term} placeholder='Search Term' onChange={this.onTextChange.bind(this)}></input>
                                 </div>
                             </div>
 
@@ -210,16 +210,11 @@ class SearchForm extends Component {
     
     onTextChange(e) {
         e.preventDefault();
-        const oldSearchTerm=e.target.value;
-
-        /* The section below will be used when adding state variables to url string 
-
-        const newSearchTerm=oldSearchTerm.replace(/ /g, "_")  // Replace spaces with underscore for search param
-        const finalSearchTerm=newSearchTerm.replace(/\W+/g, "") // remove any special characters, leave numeric and alphabetic
-        this.setState({search_term: finalSearchTerm}) // update state for search param
+                        
+        this.setState({
+            search_term: e.target.value
+        })
         
-        */
-       this.setState({search_term: oldSearchTerm}) // This will be removed if section above is used
     };
 
     radioHandler (e) {
@@ -250,7 +245,7 @@ class SearchForm extends Component {
                 }
                 })
                 .then((response)=>{
-                  //console.log(response.data)
+                  console.log(response)
                   this.setState({queryResponse: response.data})
                   //console.log(this.state.queryResponse)
                 })
@@ -268,13 +263,14 @@ class SearchForm extends Component {
                 "headers":{
                 "content-type":"application/octet-stream",
                 "x-rapidapi-host":"brianiswu-open-brewery-db-v1.p.rapidapi.com",
-                "x-rapidapi-key":"9940fa354fmsh3c9129e25421805p1f9c49jsn4f68f8364738"
+                "x-rapidapi-key":"9940fa354fmsh3c9129e25421805p1f9c49jsn4f68f8364738",
+                "useQueryString":true
                 },"params":{
                  "by_state": this.state.search_term,
                 }
                 })
                 .then((response)=>{
-                  //console.log(response) For testing
+                  console.log(response) //For testing
                   this.setState({queryResponse: response.data})
                 })
                 .catch((error)=>{
@@ -296,7 +292,7 @@ class SearchForm extends Component {
                     }
                     })
                     .then((response)=>{
-                      //console.log(response.data) For testing
+                      console.log(response.data) //For testing
                       this.setState({queryResponse: response.data})
                       
                       //console.log(this.state.queryResponse)

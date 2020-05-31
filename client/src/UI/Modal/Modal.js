@@ -5,7 +5,7 @@ import './Modal.css';
 class Modal extends Component {
 
     render() {
-        console.log(this.props.showModal + 'here');
+        console.log(this.props.showModal + ' showModal here');
         if(!this.props.showModal) {
             return (
                 null

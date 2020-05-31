@@ -18,10 +18,28 @@ class DisplayMap extends Component {
     }
 
     componentDidMount() {
+        //console.log(this.props.queryResponse.latitude)
+                
+        // Map variables and function calls
+        this.avgLong=this.computeAverageLongitude(this.props.queryResponse)
+        this.avgLat=this.computeAverageLatitude(this.props.queryResponse)
+        this.currZoom=this.setZoom(this.props.search_mode)
+        console.log(typeof(this.avgLong), typeof(this.avgLat), this.currZoom)
+
+        // if no Latitude or Longitude available set to center of USA
+        if (isNaN(this.avgLong) || isNaN(this.avgLat)) {
+            console.log('Did I get to here?')
+            this.avgLong = -98.35;
+            this.avgLat = 39.50;
+            this.currZoom = 3;
+        }
+        
+        // Create Map
         this.map = new Map({
             view: new View({
-                center: fromLonLat([-95.7129, 37.0902]),
-                zoom: 3,
+                center: fromLonLat([this.avgLong, this.avgLat
+                ]),
+                zoom: this.currZoom,
                 maxZoom:15
             }),
             layers: [
@@ -32,11 +50,65 @@ class DisplayMap extends Component {
             target: 'map'
         });
     }
+
+    // Different map zoom based on search_mode (wider for name search)
+    setZoom(myZoom){
+        if(myZoom==="name"){
+            this.setZoom=3;
+        }
+        if(myZoom==="state"){
+            this.setZoom=6;
+        }
+        if(myZoom==="city"){
+            this.setZoom=7;
+        } 
+        if(myZoom==="zip") {
+            this.setZoom=9;
+        }
+        return this.setZoom
+    }
+
+    computeAverageLatitude(lat) { // Compute average for map placement
+        this.totLat=0;
+        this.avgLat=0;
+        this.count=0;
+
+        for(let i=0; i<(lat.length); i++) {
+           
+           if(lat && typeof(lat[i].latitude) === 'string'){
+                             
+               //convert string to float and get total latitude
+               this.totLat += parseFloat(this.props.queryResponse[i].latitude)
+               this.count += 1;
+            } 
+        }
+            // Calculate average latitude to position map
+            this.avgLat=this.totLat/(this.count)
+            return this.avgLat
+        }
+    
+    computeAverageLongitude(lon) { // Compute average for map placement
+        this.totLong=0.0;
+        this.avgLong=0.0;
+        this.count=0;
+
+        for(let i=0; i<(lon.length); i++) {
+            
+            if(lon && typeof(lon[i].longitude) === 'string'){
+                             
+               //convert string to float and get total longitude
+               this.totLong += parseFloat(lon[i].longitude)
+               this.count += 1;
+            }
+        }
+            // Calculate avg longitude to position map
+            this.avgLong=this.totLong/(this.count)
+            return this.avgLong
+        }
+    
    
     render () {
-            
-            console.log(this.props.queryResponse)           
-              
+                          
             return (
                 <div className='row'>
                     <div className='col-12'>

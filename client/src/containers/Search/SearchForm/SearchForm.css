@@ -26,19 +26,26 @@
         margin-top: 5%;
       }
 
-      input {
+      input[type=radio] {
         float: left;
         width: 20px;
         margin-left: 35%;
         margin-right: -25%;
         margin-top: 1%; 
         
-        -webkit-appearance: radio;
       }
 
       .search {
-        margin-left: 31%;
+        margin-left: 2%;
         margin-top: 5%;
+        padding: 0%;
         width: 40%;
       }
-  }
+      .search:focus {
+        text-align: left;
+      }
+      
+      ::placeholder {
+        text-align: center;
+      }
+    }
