@@ -227,6 +227,12 @@ class SearchForm extends Component {
         e.preventDefault();
         // console.log(this.state.search_mode) Used for testing
         // console.log(this.state.search_term) Used for testing
+
+        // Check buttonText state for resetting page
+        if(this.state.buttonText === 'Reset') {
+            window.location.reload(false);
+            this.setState({buttonText: 'Search'})
+        } else {
         this.setState({buttonText: '... Searching'})
 
         if(this.state.search_mode === 'name') {     // axios search by name
@@ -300,9 +306,11 @@ class SearchForm extends Component {
                     .catch((error)=>{
                       console.log(error)
                     })
+                }
             }
-            setTimeout(function(){this.setState({buttonText: 'Search'})}.bind(this), 1000);
+            setTimeout(function(){this.setState({buttonText: 'Reset'})}.bind(this), 1000);
         };
-};
+        
+    };
 
 export default SearchForm;

@@ -17,18 +17,18 @@ class DisplayMap extends Component {
         this.map = {};
     }
 
-    componentDidMount() {
+    componentDidMount = () => {
         //console.log(this.props.queryResponse.latitude)
                 
         // Map variables and function calls
         this.avgLong=this.computeAverageLongitude(this.props.queryResponse)
         this.avgLat=this.computeAverageLatitude(this.props.queryResponse)
         this.currZoom=this.setZoom(this.props.search_mode)
-        console.log(typeof(this.avgLong), typeof(this.avgLat), this.currZoom)
+        //console.log(typeof(this.avgLong), typeof(this.avgLat), this.currZoom)
 
         // if no Latitude or Longitude available set to center of USA
         if (isNaN(this.avgLong) || isNaN(this.avgLat)) {
-            console.log('Did I get to here?')
+            //console.log('Did I get to here?')
             this.avgLong = -98.35;
             this.avgLat = 39.50;
             this.currZoom = 3;
@@ -52,7 +52,7 @@ class DisplayMap extends Component {
     }
 
     // Different map zoom based on search_mode (wider for name search)
-    setZoom(myZoom){
+    setZoom = (myZoom) => {
         if(myZoom==="name"){
             this.setZoom=3;
         }
@@ -68,7 +68,7 @@ class DisplayMap extends Component {
         return this.setZoom
     }
 
-    computeAverageLatitude(lat) { // Compute average for map placement
+    computeAverageLatitude = (lat) => { // Compute average for map placement
         this.totLat=0;
         this.avgLat=0;
         this.count=0;
@@ -87,7 +87,7 @@ class DisplayMap extends Component {
             return this.avgLat
         }
     
-    computeAverageLongitude(lon) { // Compute average for map placement
+    computeAverageLongitude = (lon) => { // Compute average for map placement
         this.totLong=0.0;
         this.avgLong=0.0;
         this.count=0;
