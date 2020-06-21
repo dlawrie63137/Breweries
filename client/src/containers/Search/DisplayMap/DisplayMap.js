@@ -6,6 +6,10 @@ import {OSM} from 'ol/source';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import Tile from 'ol/layer/Tile';
+import Point from 'ol/geom/Point';
+import Feature from 'ol/Feature';
+import layerVector from 'ol/layer/Vector';
+import sourceVector from 'ol/source/Vector';
 import {fromLonLat} from 'ol/proj';
 
 
@@ -40,7 +44,7 @@ class DisplayMap extends Component {
                 center: fromLonLat([this.avgLong, this.avgLat
                 ]),
                 zoom: this.currZoom,
-                maxZoom:15
+                maxZoom:16
             }),
             layers: [
                 new Tile({
@@ -49,7 +53,21 @@ class DisplayMap extends Component {
             ],
             target: 'map'
         });
-    }
+    
+
+    // Place location markers on map
+    for(let i=0; i < (this.props.queryResponse.length); i++) {
+    var layer = new layerVector({
+        source: new sourceVector({
+            features: [
+                new Feature({
+                    geometry: new Point(fromLonLat([this.props.queryResponse[i].longitude, this.props.queryResponse[i].latitude]))
+                })
+            ]
+        })
+    });
+    this.map.addLayer(layer);
+}}
 
     // Different map zoom based on search_mode (wider for name search)
     setZoom = (myZoom) => {
