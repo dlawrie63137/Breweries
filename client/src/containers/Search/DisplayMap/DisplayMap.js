@@ -9,9 +9,9 @@ import Tile from 'ol/layer/Tile';
 import Point from 'ol/geom/Point';
 import Feature from 'ol/Feature';
 import layerVector from 'ol/layer/Vector';
+import Overlay from 'ol/Overlay';
 import sourceVector from 'ol/source/Vector';
 import {fromLonLat} from 'ol/proj';
-
 
 
 class DisplayMap extends Component {
@@ -67,7 +67,45 @@ class DisplayMap extends Component {
         })
     });
     this.map.addLayer(layer);
-}}
+  }
+
+    //Initialize Popup
+    var container = document.getElementById('popup');
+    var content = document.getElementById('popup-content');
+    var closer = document.getElementById('popup-closer');
+
+    var overlay = new Overlay({
+        element: container,
+        autoPan: true,
+        autoPanAnimation: {
+            duration: 250
+        }
+ });
+    this.map.addOverlay(overlay);
+
+    closer.onclick = function() {
+        overlay.setPosition(undefined);
+        closer.blur();
+        return false;
+    };
+
+    //Open Popup when marker is clicked
+    this.map.on('singleclick', function (event) {
+        console.log("Did it see click?")
+        console.log(event.pixel);
+        
+        if (this.hasFeatureAtPixel(event.pixel) === true) {
+            var coordinate = event.coordinate;
+                                
+            content.innerHTML = '<b>Hello World!</b><br />I am a popup.';
+            overlay.setPosition(coordinate);
+        } else {
+            console.log('Or did I get sent here?')
+            overlay.setPosition(undefined);
+            closer.blur();
+        }
+    });
+}   
 
     // Different map zoom based on search_mode (wider for name search)
     setZoom = (myZoom) => {
@@ -131,6 +169,10 @@ class DisplayMap extends Component {
                 <div className='row'>
                     <div className='col-12'>
                         <div id='map' className='map'></div>
+                        <div id="popup" className="ol-popup">
+                            <a href="# " id="popup-closer" className="ol-popup-closer" alt="popup-label">Click Me</a>
+                            <div id="popup-content"></div>
+                        </div>
                     </div>
                 </div>
             )
