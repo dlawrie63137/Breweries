@@ -21,6 +21,11 @@
     padding: 10px;
   }
 
+  /* Large Phone */
+  @media only screen and (max-width: 800px) {
+    
+  }
+
   /* For Desktop */
   @media only screen and (min-width: 1120px) {
     .responsive-image__image {

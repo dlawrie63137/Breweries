@@ -22,17 +22,14 @@ class DisplayMap extends Component {
     }
 
     componentDidMount = () => {
-        //console.log(this.props.queryResponse.latitude)
-                
+                                
         // Map variables and function calls
         this.avgLong=this.computeAverageLongitude(this.props.queryResponse)
         this.avgLat=this.computeAverageLatitude(this.props.queryResponse)
         this.currZoom=this.setZoom(this.props.search_mode)
-        //console.log(typeof(this.avgLong), typeof(this.avgLat), this.currZoom)
-
+        
         // if no Latitude or Longitude available set to center of USA
         if (isNaN(this.avgLong) || isNaN(this.avgLat)) {
-            //console.log('Did I get to here?')
             this.avgLong = -98.35;
             this.avgLat = 39.50;
             this.currZoom = 3;
@@ -57,7 +54,8 @@ class DisplayMap extends Component {
 
     // Place location markers on map
     for(let i=0; i < (this.props.queryResponse.length); i++) {
-    var layer = new layerVector({
+            
+        var layer = new layerVector({
         source: new sourceVector({
             features: [
                 new Feature({
@@ -66,22 +64,25 @@ class DisplayMap extends Component {
             ]
         })
     });
+    
     this.map.addLayer(layer);
-  }
+} 
 
     //Initialize Popup
     var container = document.getElementById('popup');
     var content = document.getElementById('popup-content');
     var closer = document.getElementById('popup-closer');
-
+    
     var overlay = new Overlay({
         element: container,
         autoPan: true,
         autoPanAnimation: {
             duration: 250
         }
- });
-    this.map.addOverlay(overlay);
+    });
+    
+    this.map.addOverlay(overlay); 
+
 
     closer.onclick = function() {
         overlay.setPosition(undefined);
@@ -91,20 +92,18 @@ class DisplayMap extends Component {
 
     //Open Popup when marker is clicked
     this.map.on('singleclick', function (event) {
-        console.log("Did it see click?")
-        console.log(event.pixel);
-        
+                        
         if (this.hasFeatureAtPixel(event.pixel) === true) {
             var coordinate = event.coordinate;
-                                
-            content.innerHTML = '<b>Hello World!</b><br />I am a popup.';
+            
+            content.innerHTML = 'I am a popup.';
             overlay.setPosition(coordinate);
         } else {
             console.log('Or did I get sent here?')
             overlay.setPosition(undefined);
             closer.blur();
         }
-    });
+    })
 }   
 
     // Different map zoom based on search_mode (wider for name search)
@@ -170,7 +169,7 @@ class DisplayMap extends Component {
                     <div className='col-12'>
                         <div id='map' className='map'></div>
                         <div id="popup" className="ol-popup">
-                            <a href="# " id="popup-closer" className="ol-popup-closer" alt="popup-label">Click Me</a>
+                            <a href="# " id="popup-closer" className="ol-popup-closer" alt="popup-label"> </a>
                             <div id="popup-content"></div>
                         </div>
                     </div>

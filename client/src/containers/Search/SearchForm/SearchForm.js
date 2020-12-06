@@ -103,7 +103,8 @@ class SearchForm extends Component {
                         </form>
                         <div className='row'>
                             <div className='col-12'>
-                                <DisplayMap 
+                                
+                               <DisplayMap
                                     search_mode={this.state.search_mode}
                                     search_term={this.state.search_term}
                                     queryResponse={this.state.queryResponse}>
@@ -298,7 +299,7 @@ class SearchForm extends Component {
                     }
                     })
                     .then((response)=>{
-                      console.log(response.data) //For testing
+                      //For testing console.log(response.data) 
                       this.setState({queryResponse: response.data})
                       
                       //console.log(this.state.queryResponse)

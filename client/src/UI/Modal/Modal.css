@@ -1,6 +1,6 @@
 /* Extra small devices (phones, 600px and down) */
 
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 800px) {
 
    * {
        box-sizing: border-box;
@@ -9,7 +9,7 @@
    button {
        border-color: dodgerblue;
        border-style: groove;
-       margin-left: 25%;
+       margin-left: 15%;
    }
 
    .contents {
@@ -40,7 +40,8 @@
 
     .replyBtn {
        align-items: center;
-       margin-top: 15%;
+       margin-left: -15%;
+       margin-top: 10%;
     }
 
     .row::after {
@@ -66,7 +67,7 @@
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 801px) {
     * {
         box-sizing: border-box;
     }

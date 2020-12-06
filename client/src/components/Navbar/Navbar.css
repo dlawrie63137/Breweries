@@ -1,4 +1,5 @@
 /* For Cell */
+
 * {
     box-sizing: border-box;
   }
@@ -23,18 +24,20 @@ nav ul {
     list-style: none;
     margin-right: 20px;
 }
+ 
 
 /* For Desktop */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 700px) {
   nav li {
     float: left;
-    font-size: 16pt;
+    font-size: 10pt;
     padding-top: 10px;
-    padding-right: 30px;
+    padding-right: 0px;
   }
 
   nav ul {
-    margin-right: 10%;
-    margin-left: 0%;
+    margin-right: 5%;
+    margin-left: -10%;
+    margin-top: 25%;
   }
 }
